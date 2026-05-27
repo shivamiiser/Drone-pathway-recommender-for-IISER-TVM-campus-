@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>My Stlite App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.31.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.31.0/build/stlite.js"></script>
+    <script>
+      stlite.mount(
+        {
+          requirements: [], // Add your pip packages here like ["pandas", "numpy"]
+          entrypoint: "app.py",
+          files: {
+            "app.py": `
+import streamlit as st
+st.title("Hello from GitHub Pages!")
+st.write("This is running entirely in the browser using stlite.")
+            `,
+          },
+        },
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
